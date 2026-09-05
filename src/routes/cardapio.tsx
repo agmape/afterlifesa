@@ -35,7 +35,7 @@ const alcoolicos: Item[] = [
   { name: "Caipirinha de Vodka Smirnoff", detail: "500ml", price: "R$ 35,00" },
   { name: "Copão de Vodka Smirnoff", detail: "750ml", price: "R$ 20,00" },
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
-  { name: "José Cuervo Gold", detail: "50ml", price: "R$ 30,00" },
+  { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
   { name: "Copão de Whisky Chanceler", detail: "750ml", price: "R$ 15,00" },
   { name: "Copão de Whisky Passaporte", detail: "750ml", price: "R$ 25,00" },
   {
