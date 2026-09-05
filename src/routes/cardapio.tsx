@@ -24,18 +24,13 @@ export const Route = createFileRoute("/cardapio")({
 type Item = { name: string; detail?: string; price: string; note?: string };
 
 const alcoolicos: Item[] = [
-  { name: "Cuba Libre", detail: "500ml", price: "R$ 25,00" },
   {
     name: "Copão de Gin Eternity",
     detail: "750ml",
     price: "R$ 10,00",
     note: "Opções: Melancia, Morango com Pêssego e Tropical",
   },
-  { name: "Caipirinha de Cachaça", detail: "500ml", price: "R$ 25,00" },
-  { name: "Caipirinha de Vodka Smirnoff", detail: "500ml", price: "R$ 35,00" },
-  { name: "Copão de Vodka Smirnoff", detail: "750ml", price: "R$ 20,00" },
-  { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
-  { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
+  { name: "Copão de Gin Tanqueray", detail: "500ml", price: "R$ 50,00" },
   { name: "Copão de Whisky Chanceler", detail: "750ml", price: "R$ 15,00" },
   { name: "Copão de Whisky Passport", detail: "750ml", price: "R$ 25,00" },
   {
@@ -44,23 +39,33 @@ const alcoolicos: Item[] = [
     price: "R$ 35,00",
     note: "Com Red Bull + R$ 15,00",
   },
+  { name: "Caipirinha de Cachaça", detail: "500ml", price: "R$ 25,00" },
+  { name: "Caipirinha de Vodka Smirnoff", detail: "500ml", price: "R$ 35,00" },
+  { name: "Copão de Vodka Smirnoff", detail: "750ml", price: "R$ 20,00" },
+  { name: "Cuba Libre", detail: "500ml", price: "R$ 25,00" },
+  { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
+  { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
 ];
 
 const cervejas: Item[] = [
-  { name: "Patagonia", detail: "350ml", price: "R$ 9,00" },
   { name: "Copão Budweiser", detail: "500ml", price: "R$ 10,00" },
+  { name: "Patagonia", detail: "350ml", price: "R$ 9,00" },
   { name: "Spaten Long Neck", detail: "330ml", price: "R$ 8,00" },
   { name: "Heineken Long Neck", detail: "330ml", price: "R$ 10,00" },
-  { name: "Skol Beats GT", price: "R$ 12,00" },
   { name: "Mike's Limão", price: "R$ 12,00" },
+  { name: "Skol Beats GT", price: "R$ 12,00" },
 ];
 
 const naoAlcoolicos: Item[] = [
   { name: "Suco Del Valle Uva", detail: "lata", price: "R$ 7,00" },
   { name: "Coca-Cola Mini", price: "R$ 4,00" },
   { name: "Coca-Cola Mini Zero", price: "R$ 4,00" },
+  { name: "Fanta Laranja Mini", price: "R$ 5,00" },
+  { name: "Fanta Uva Mini", price: "R$ 5,00" },
   { name: "Monster", detail: "lata", price: "R$ 15,00" },
+  { name: "Guaraviton", price: "R$ 6,00" },
   { name: "Água Bio", price: "R$ 3,00" },
+  { name: "Água com Gás Nestlé", price: "R$ 4,00" },
 ];
 
 function MenuSection({
