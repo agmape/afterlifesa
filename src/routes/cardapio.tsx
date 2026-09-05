@@ -37,7 +37,7 @@ const alcoolicos: Item[] = [
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
   { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
   { name: "Copão de Whisky Chanceler", detail: "750ml", price: "R$ 15,00" },
-  { name: "Copão de Whisky Passaporte", detail: "750ml", price: "R$ 25,00" },
+  { name: "Copão de Whisky Passport", detail: "750ml", price: "R$ 25,00" },
   {
     name: "Copão de Whisky White Horse",
     detail: "750ml",
