@@ -45,6 +45,7 @@ const alcoolicos: Item[] = [
   { name: "Cuba Libre", detail: "500 ML", price: "R$ 25,00" },
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
   { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
+  { name: "Xeque-Mate", detail: "Lata", price: "R$ 14,00" },
 ];
 
 const cervejas: Item[] = [
