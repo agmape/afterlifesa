@@ -81,8 +81,8 @@ function HomePage() {
             <p className="mt-7 font-display text-2xl tracking-[0.18em] text-accent sm:text-4xl">BACK TO THE FUTURE</p>
           </div>
           <div className="flex flex-wrap gap-2 border-t border-border/60 pt-5">
-            {['SINUCA', 'KARAOKÊ', 'TORNEIO DE JOGOS'].map((activity, index) => (
-              <span key={activity} className={`activity-chip ${index === 1 ? 'activity-chip-primary' : ''}`}>{activity}</span>
+            {['SINUCA', 'KARAOKÊ', 'TORNEIO DE JOGOS'].map((activity) => (
+              <span key={activity} className="activity-chip">{activity}</span>
             ))}
           </div>
         </div>
