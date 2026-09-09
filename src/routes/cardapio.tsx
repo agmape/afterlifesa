@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { AmbientInterface, StatusLine } from "@/components/AmbientInterface";
 import { Martini, Beer, GlassWater } from "lucide-react";
 
 export const Route = createFileRoute("/cardapio")({
@@ -75,25 +76,26 @@ function MenuSection({
   icon: Icon,
   items,
   accent,
-  frame,
 }: {
   title: string;
   icon: typeof Beer;
   items: Item[];
   accent: string;
-  frame: string;
 }) {
   return (
-    <section className={`rounded-xl bg-card/60 p-6 sm:p-8 ${frame}`}>
-      <div className="flex items-center gap-3">
-        <Icon className={`h-8 w-8 ${accent}`} />
-        <h2 className={`font-display text-3xl tracking-[0.2em] sm:text-4xl ${accent}`}>{title}</h2>
+    <section className="menu-panel group">
+      <div className="flex items-center justify-between gap-4 border-b border-border/60 pb-5">
+        <div className="flex items-center gap-3">
+          <span className={`menu-icon ${accent}`}><Icon className="h-5 w-5" /></span>
+          <h2 className="font-display text-3xl tracking-[0.1em] text-foreground sm:text-4xl">{title}</h2>
+        </div>
+        <span className="hud-label">{String(items.length).padStart(2, '0')} ITEMS</span>
       </div>
-      <ul className="mt-6 flex flex-col divide-y divide-border">
+      <ul className="mt-2 flex flex-col divide-y divide-border/50">
         {items.map((item) => (
-          <li key={item.name} className="py-4">
+          <li key={item.name} className="menu-row">
             <div className="flex items-baseline justify-between gap-4">
-              <p className="text-lg font-semibold text-foreground">
+              <p className="text-base font-semibold text-foreground sm:text-lg">
                 {item.name}
                 {item.detail && (
                   <span className="ml-2 text-sm font-medium text-muted-foreground">
@@ -101,7 +103,7 @@ function MenuSection({
                   </span>
                 )}
               </p>
-              <p className={`shrink-0 font-display text-2xl tracking-wider ${accent}`}>
+              <p className={`shrink-0 font-display text-2xl tracking-[0.06em] ${accent}`}>
                 {item.price}
               </p>
             </div>
@@ -115,45 +117,41 @@ function MenuSection({
 
 function CardapioPage() {
   return (
-    <div className="min-h-screen starfield">
+    <AmbientInterface>
       <Header />
 
-      <main className="mx-auto max-w-3xl px-4 py-14">
-        <h1 className="text-center font-display text-6xl tracking-wider neon-white-pink animate-flicker sm:text-7xl">
-          CARDÁPIO
-        </h1>
-        <p className="mt-3 text-center font-display text-xl tracking-[0.4em] neon-purple">
-          AFTERLIFE PUB
-        </p>
+      <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-20">
+        <header className="menu-heading reveal-up">
+          <div className="flex justify-center"><StatusLine label="BEVERAGE DATABASE / ONLINE" /></div>
+          <h1 className="mt-5 text-center font-display text-7xl leading-none tracking-[0.06em] text-foreground sm:text-9xl">CARDÁPIO</h1>
+          <p className="mt-3 text-center font-body text-xs font-semibold tracking-[0.35em] text-accent sm:text-sm">AFTERLIFE PUB</p>
+        </header>
 
-        <div className="mt-12 flex flex-col gap-10">
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <MenuSection
             title="ALCOÓLICOS"
             icon={Martini}
             items={alcoolicos}
             accent="neon-magenta"
-            frame="neon-frame-pink"
           />
           <MenuSection
             title="CERVEJAS"
             icon={Beer}
             items={cervejas}
             accent="neon-green"
-            frame="neon-frame-cyan"
           />
           <MenuSection
             title="NÃO ALCOÓLICOS"
             icon={GlassWater}
             items={naoAlcoolicos}
             accent="neon-cyan"
-            frame="neon-frame-purple"
           />
         </div>
 
-        <p className="mt-12 text-center text-sm text-muted-foreground">
+        <p className="mt-14 border-t border-border/60 pt-8 text-center text-sm text-muted-foreground">
           Rua Onze de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)
         </p>
       </main>
-    </div>
+    </AmbientInterface>
   );
 }
