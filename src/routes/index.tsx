@@ -79,13 +79,12 @@ function HomePage() {
           <span className="neon-frame-purple rounded-md px-5 py-2 neon-cyan">SINUCA</span>
           <span className="neon-frame-purple rounded-md px-5 py-2 neon-magenta">KARAOKÊ</span>
           <span className="neon-frame-purple rounded-md px-5 py-2 neon-green">
-            SALA DE JOGOS LIBERADA A NOITE TODA
+            TORNEIO DE JOGOS
           </span>
         </div>
 
         <div className="mt-10 flex flex-col items-center gap-2">
-          <p className="font-display text-4xl tracking-widest neon-cyan sm:text-5xl">DJ NINJA</p>
-          <p className="font-display text-2xl tracking-[0.3em] neon-magenta">20H ÀS 04H</p>
+          <p className="font-display text-4xl tracking-[0.3em] neon-magenta sm:text-5xl">20H ÀS 04H</p>
         </div>
 
         <div className="mx-auto mt-10 flex max-w-md flex-col gap-2 rounded-lg neon-frame-cyan bg-card/60 p-6">
