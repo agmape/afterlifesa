@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { TrainFront, PersonStanding, Bus, MapPin, Star, Calendar, TriangleAlert } from "lucide-react";
+import { AmbientInterface, StatusLine } from "@/components/AmbientInterface";
+import { TrainFront, PersonStanding, Bus, MapPin, Star, Calendar, TriangleAlert, ArrowUpRight, Radio, Ticket } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,87 +63,96 @@ const directions = [
 
 function HomePage() {
   return (
-    <div className="min-h-screen starfield">
+    <AmbientInterface>
       <Header />
 
-      {/* Hero */}
-      <section className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-        <p className="font-display text-3xl tracking-[0.3em] neon-magenta sm:text-4xl">SÁBADO NO</p>
-        <h1 className="mt-2 font-display text-7xl leading-none tracking-wider neon-white-pink animate-flicker sm:text-9xl">
-          AFTERLIFE
-        </h1>
-        <p className="mt-4 font-display text-2xl tracking-[0.5em] neon-purple sm:text-3xl">
-          BACK TO THE FUTURE
-        </p>
-
-        <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-3 font-display text-xl tracking-widest">
-          <span className="neon-frame-purple rounded-md px-5 py-2 neon-cyan">SINUCA</span>
-          <span className="neon-frame-purple rounded-md px-5 py-2 neon-magenta">KARAOKÊ</span>
-          <span className="neon-frame-purple rounded-md px-5 py-2 neon-green">
-            TORNEIO DE JOGOS
-          </span>
+      <main>
+      <section className="hero-section mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl grid-cols-1 content-center gap-5 px-5 py-12 sm:px-8 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-12 lg:gap-6 lg:py-16">
+        <div className="hero-panel tech-panel reveal-up lg:col-span-8 lg:row-span-2">
+          <div className="flex items-center justify-between gap-4">
+            <StatusLine label="SATURDAY PROTOCOL / ACTIVE" />
+            <span className="hud-label hidden sm:block">SA · 23°39' S</span>
+          </div>
+          <div className="my-auto py-10 sm:py-14 lg:py-20">
+            <p className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-primary sm:text-sm">SÁBADO NO</p>
+            <h1 className="glitch-title mt-3 font-display text-[clamp(4.5rem,13vw,10.5rem)] leading-[0.78] tracking-[0.03em] text-foreground" data-text="AFTERLIFE">
+              AFTERLIFE
+            </h1>
+            <p className="mt-7 font-display text-2xl tracking-[0.18em] text-accent sm:text-4xl">BACK TO THE FUTURE</p>
+          </div>
+          <div className="flex flex-wrap gap-2 border-t border-border/60 pt-5">
+            {['SINUCA', 'KARAOKÊ', 'TORNEIO DE JOGOS'].map((activity, index) => (
+              <span key={activity} className={`activity-chip ${index === 1 ? 'activity-chip-primary' : ''}`}>{activity}</span>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center gap-2">
-          <p className="font-display text-4xl tracking-[0.3em] neon-magenta sm:text-5xl">20H ÀS 04H</p>
+        <div className="tech-panel reveal-up delay-one flex min-h-48 flex-col justify-between lg:col-span-4">
+          <div className="flex items-center justify-between">
+            <Radio className="h-5 w-5 text-accent" />
+            <span className="hud-label">LIVE WINDOW</span>
+          </div>
+          <div>
+            <p className="font-display text-5xl tracking-[0.08em] text-foreground sm:text-6xl">20H — 04H</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.2em] text-muted-foreground">Operação noturna</p>
+          </div>
+          <div className="signal-bars" aria-hidden="true"><span /><span /><span /><span /><span /></div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-md flex-col gap-2 rounded-lg neon-frame-cyan bg-card/60 p-6">
-          <p className="font-display text-3xl tracking-wider neon-green">
-            R$20,00 <span className="text-lg text-muted-foreground">ANTECIPADO</span>
-          </p>
-          <p className="font-display text-3xl tracking-wider neon-green">
-            R$30,00 <span className="text-lg text-muted-foreground">NA PORTA</span>
-          </p>
-        </div>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            to="/cardapio"
-            className="rounded-md bg-primary px-8 py-3 font-display text-xl tracking-widest text-primary-foreground transition-transform hover:scale-105"
-          >
-            VER CARDÁPIO
+        <div className="tech-panel reveal-up delay-two flex flex-col justify-between gap-8 lg:col-span-4">
+          <div className="flex items-center justify-between">
+            <Ticket className="h-5 w-5 text-primary" />
+            <span className="hud-label">ACCESS PASS</span>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div><p className="hud-label">ANTECIPADO</p><p className="mt-1 font-display text-4xl text-foreground">R$20,00</p></div>
+            <div><p className="hud-label">NA PORTA</p><p className="mt-1 font-display text-4xl text-foreground">R$30,00</p></div>
+          </div>
+          <Link to="/cardapio" className="primary-action group">
+            VER CARDÁPIO <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
       </section>
 
-      {/* Como chegar */}
-      <section className="mx-auto max-w-3xl px-4 py-16">
-        <h2 className="text-center font-display text-4xl tracking-[0.2em] neon-white-pink sm:text-5xl">
-          COMO CHEGAR
-        </h2>
-        <div className="mt-10 flex flex-col gap-6">
+      <section className="section-band">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div><span className="hud-label text-accent">NAVIGATION SEQUENCE / 05 STEPS</span><h2 className="mt-3 font-display text-5xl tracking-[0.06em] text-foreground sm:text-7xl">COMO CHEGAR</h2></div>
+            <StatusLine label="ROUTE CALCULATED" />
+          </div>
+          <div className="route-grid">
           {directions.map((d) => (
             <div
               key={d.step}
-              className={`flex items-start gap-4 rounded-lg bg-card/60 p-5 ${d.frame}`}
+              className="route-card group"
             >
-              <d.icon className={`mt-1 h-8 w-8 shrink-0 ${d.color}`} />
-              <div>
-                <p className={`font-display text-xl tracking-widest ${d.color}`}>{d.step}</p>
-                <p className="mt-1 text-lg text-foreground/90">{d.text}</p>
+              <div className="route-icon"><d.icon className="h-5 w-5" /></div>
+              <div className="relative z-10">
+                <p className="font-display text-2xl tracking-[0.08em] text-foreground transition-colors group-hover:text-accent">{d.step}</p>
+                <p className="mt-2 max-w-lg leading-relaxed text-muted-foreground">{d.text}</p>
               </div>
             </div>
           ))}
-        </div>
+          </div>
 
-        <div className="mt-10 flex items-center justify-center gap-3 rounded-lg neon-frame-pink bg-card/60 p-4">
-          <TriangleAlert className="h-6 w-6 neon-pink" />
-          <p className="font-display text-xl tracking-widest neon-pink">
+        <div className="notice-bar mt-8">
+          <TriangleAlert className="h-5 w-5 text-primary" />
+          <p className="font-body text-sm font-semibold tracking-[0.12em] text-foreground sm:text-base">
             CHEGUE CEDO E GARANTA SUA ENTRADA!
           </p>
         </div>
+        </div>
       </section>
+      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 text-center">
-        <p className="flex items-center justify-center gap-2 font-display text-lg tracking-widest text-muted-foreground">
+      <footer className="border-t border-border/60 bg-background/60 px-5 py-10 text-center backdrop-blur-sm">
+        <p className="flex items-center justify-center gap-2 font-body text-sm font-semibold tracking-[0.14em] text-muted-foreground">
           <Calendar className="h-4 w-4" /> SÁBADO A PARTIR DAS 20H
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Onze de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)
         </p>
       </footer>
-    </div>
+    </AmbientInterface>
   );
 }
