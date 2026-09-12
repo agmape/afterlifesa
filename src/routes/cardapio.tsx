@@ -107,7 +107,7 @@ function MenuSection({
       </div>
       <ul className="mt-2 flex flex-col divide-y divide-border/50">
         {items.map((item) => (
-          <li key={item.name} className="menu-row">
+          <li key={`${item.name}-${item.detail ?? item.price}`} className="menu-row">
             <div className="flex items-baseline justify-between gap-4">
               <p className="text-base font-semibold text-foreground sm:text-lg">
                 {item.name}
