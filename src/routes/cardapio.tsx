@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { AmbientInterface, StatusLine } from "@/components/AmbientInterface";
-import { Martini, Beer, GlassWater } from "lucide-react";
+import { Martini, Beer, GlassWater, Popcorn } from "lucide-react";
 
 export const Route = createFileRoute("/cardapio")({
   head: () => ({
@@ -10,13 +10,15 @@ export const Route = createFileRoute("/cardapio")({
       {
         name: "description",
         content:
-          "Cardápio do Afterlife Pub: drinks, caipirinhas, copões, cervejas e não alcoólicos. Santo André/SP.",
+          "Cardápio do Afterlife Pub: drinks, caipirinhas, copões, cervejas, não alcoólicos e petiscos. Santo André/SP.",
       },
       { property: "og:title", content: "Cardápio — Afterlife Pub" },
       {
         property: "og:description",
-        content: "Drinks, caipirinhas, copões, cervejas e não alcoólicos no Afterlife Pub.",
+        content: "Drinks, caipirinhas, copões, cervejas, não alcoólicos e petiscos no Afterlife Pub.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: CardapioPage,
@@ -75,6 +77,12 @@ const naoAlcoolicos: Item[] = [
   { name: "Guaraviton", price: "R$ 6,00" },
   { name: "Água Bio", price: "R$ 3,00" },
   { name: "Água com Gás Nestlé", price: "R$ 4,00" },
+];
+
+const petiscos: Item[] = [
+  { name: "Salgadinho Fofura", price: "R$ 4,00" },
+  { name: "Amendoim Jazam", detail: "50g", price: "R$ 5,00" },
+  { name: "Amendoim Jazam", detail: "90g", price: "R$ 7,00" },
 ];
 
 function MenuSection({
@@ -151,6 +159,12 @@ function CardapioPage() {
             icon={GlassWater}
             items={naoAlcoolicos}
             accent="neon-cyan"
+          />
+          <MenuSection
+            title="PETISCOS"
+            icon={Popcorn}
+            items={petiscos}
+            accent="neon-magenta"
           />
         </div>
 
