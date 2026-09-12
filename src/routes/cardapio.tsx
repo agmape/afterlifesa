@@ -43,11 +43,17 @@ const alcoolicos: Item[] = [
   { name: "Copão de Vodka Smirnoff", detail: "750 ML", price: "R$ 20,00" },
   { name: "Caipirinha Vodka Smirnoff", detail: "500 ML", price: "R$ 35,00" },
   { name: "Caipirinha Cachaça", detail: "500 ML", price: "R$ 25,00" },
+  {
+    name: "Copão de Kariri com Mel",
+    detail: "750 ml",
+    price: "R$ 15,00",
+    note: "Com Gelo de Coco + R$ 5,00",
+  },
+  { name: "Copão Espanhola", detail: "500 ML", price: "R$ 18,00" },
   { name: "Cuba Libre", detail: "500 ML", price: "R$ 25,00" },
+  { name: "Xeque-Mate", detail: "Lata", price: "R$ 14,00" },
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
   { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
-  { name: "Xeque-Mate", detail: "Lata", price: "R$ 14,00" },
-  { name: "Copão Espanhola", detail: "500 ML", price: "R$ 18,00" },
 ];
 
 const cervejas: Item[] = [
