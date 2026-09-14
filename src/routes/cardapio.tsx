@@ -33,7 +33,7 @@ const alcoolicos: Item[] = [
     price: "R$ 10,00",
     note: "Opções: Melancia, Morango com Pêssego e Tropical",
   },
-  { name: "Copão de Gin Tanqueray", detail: "500ml", price: "R$ 50,00" },
+  { name: "Copão de Gin Tanqueray", detail: "500ml", price: "R$ 45,00" },
   { name: "Copão de Whisky Chanceler", detail: "750ml", price: "R$ 15,00" },
   { name: "Copão de Whisky Passport", detail: "750ml", price: "R$ 25,00" },
   {
@@ -43,7 +43,7 @@ const alcoolicos: Item[] = [
     note: "Com Red Bull + R$ 15,00",
   },
   { name: "Copão de Vodka Smirnoff", detail: "750ml", price: "R$ 20,00" },
-  { name: "Caipirinha Vodka Smirnoff", detail: "500ml", price: "R$ 35,00" },
+  { name: "Caipirinha Vodka Smirnoff", detail: "500ml", price: "R$ 30,00" },
   { name: "Caipirinha Cachaça", detail: "500ml", price: "R$ 25,00" },
   {
     name: "Copão de Kariri com Mel",
@@ -55,13 +55,13 @@ const alcoolicos: Item[] = [
   { name: "Cuba Libre", detail: "500ml", price: "R$ 25,00" },
   { name: "Xeque-Mate", detail: "Lata", price: "R$ 14,00" },
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
-  { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 30,00" },
+  { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 20,00" },
 ];
 
 const cervejas: Item[] = [
   { name: "Copão Budweiser", detail: "500ml", price: "R$ 10,00" },
-  { name: "Patagonia", detail: "350ml", price: "R$ 9,00" },
-  { name: "Spaten Long Neck", detail: "330ml", price: "R$ 8,00" },
+  { name: "Patagonia", detail: "350ml", price: "R$ 8,00" },
+  { name: "Spaten Long Neck", detail: "330ml", price: "R$ 9,00" },
   { name: "Heineken Long Neck", detail: "330ml", price: "R$ 10,00" },
   { name: "Mike's Limão", price: "R$ 12,00" },
   { name: "Skol Beats GT", price: "R$ 12,00" },
@@ -82,7 +82,6 @@ const naoAlcoolicos: Item[] = [
 const petiscos: Item[] = [
   { name: "Salgadinho Fofura", price: "R$ 4,00" },
   { name: "Amendoim Jazam", detail: "50g", price: "R$ 5,00" },
-  { name: "Amendoim Jazam", detail: "90g", price: "R$ 7,00" },
 ];
 
 function MenuSection({
