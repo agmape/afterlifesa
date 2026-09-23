@@ -10,7 +10,7 @@ export function Header() {
             AFTER<span className="text-accent transition-colors group-hover:text-primary">LIFE</span>
           </span>
         </Link>
-        <nav className="flex items-center gap-2 font-body text-xs font-semibold tracking-[0.18em] sm:gap-3 sm:text-sm" aria-label="Navegação principal">
+        <nav className="flex items-center gap-1 font-body text-[10px] font-semibold tracking-[0.12em] sm:gap-3 sm:text-sm sm:tracking-[0.18em]" aria-label="Navegação principal">
           <Link
             to="/"
             className="nav-link"
@@ -25,6 +25,13 @@ export function Header() {
             activeProps={{ className: "nav-link nav-link-active" }}
           >
             CARDÁPIO
+          </Link>
+          <Link
+            to="/reservar"
+            className="nav-link"
+            activeProps={{ className: "nav-link nav-link-active" }}
+          >
+            RESERVAR
           </Link>
         </nav>
       </div>
