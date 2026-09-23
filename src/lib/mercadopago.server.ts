@@ -77,8 +77,6 @@ export async function createCheckoutOrder(input: {
           description: `${input.date} às ${input.time}`,
           quantity: input.guests,
           unit_price: unitPrice,
-          total_amount: total,
-          unit_measure: "unit",
         },
       ],
       config: {
