@@ -22,13 +22,13 @@ async function mercadoPagoRequest<T>(
   path: string,
   init: RequestInit = {},
 ): Promise<T> {
+  const headers = new Headers(init.headers);
+  headers.set("Authorization", `Bearer ${getAccessToken()}`);
+  headers.set("Content-Type", "application/json");
+
   const response = await fetch(`https://api.mercadopago.com${path}`, {
     ...init,
-    headers: {
-      Authorization: `Bearer ${getAccessToken()}`,
-      "Content-Type": "application/json",
-      ...(init.headers ?? {}),
-    },
+    headers,
   });
 
   if (!response.ok) {
@@ -61,7 +61,6 @@ export async function createCheckoutOrder(input: {
     body: JSON.stringify({
       type: "online",
       processing_mode: "manual",
-      capture_mode: "automatic_async",
       total_amount: total,
       external_reference: input.reservationId,
       description: `Reserva Afterlife - ${input.date} às ${input.time}`,
@@ -77,6 +76,8 @@ export async function createCheckoutOrder(input: {
           description: `${input.date} às ${input.time}`,
           quantity: input.guests,
           unit_price: unitPrice,
+          unit_measure: "unit",
+          total_amount: total,
         },
       ],
       config: {
