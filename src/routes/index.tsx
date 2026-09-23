@@ -108,9 +108,17 @@ function HomePage() {
             <div><p className="hud-label">ANTECIPADO</p><p className="mt-1 font-display text-4xl text-foreground">R$20,00</p></div>
             <div><p className="hud-label">NA PORTA</p><p className="mt-1 font-display text-4xl text-foreground">R$30,00</p></div>
           </div>
-          <Link to="/cardapio" className="primary-action group">
-            VER CARDÁPIO <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link to="/reservar" className="primary-action group">
+              RESERVAR AGORA <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              to="/cardapio"
+              className="inline-flex items-center justify-center rounded-md border border-border px-5 py-3 text-sm font-semibold tracking-[0.12em] text-foreground transition hover:border-accent"
+            >
+              VER CARDÁPIO
+            </Link>
+          </div>
         </div>
       </section>
 
