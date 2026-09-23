@@ -51,14 +51,14 @@ async function supabaseRequest<T>(
   init: RequestInit = {},
 ): Promise<T> {
   const { url, serviceRoleKey } = getSupabaseConfig();
+  const headers = new Headers(init.headers);
+  headers.set("apikey", serviceRoleKey);
+  headers.set("Authorization", `Bearer ${serviceRoleKey}`);
+  headers.set("Content-Type", "application/json");
+
   const response = await fetch(`${url}/rest/v1/${path}`, {
     ...init,
-    headers: {
-      apikey: serviceRoleKey,
-      Authorization: `Bearer ${serviceRoleKey}`,
-      "Content-Type": "application/json",
-      ...(init.headers ?? {}),
-    },
+    headers,
   });
 
   if (!response.ok) {
@@ -197,7 +197,6 @@ export function isActiveReservation(reservation: Reservation) {
 export function publicReservation(reservation: Reservation) {
   return {
     id: reservation.id,
-    customerName: reservation.customer_name,
     reservationDate: reservation.reservation_date,
     reservationTime: reservation.reservation_time,
     guests: reservation.guests,
