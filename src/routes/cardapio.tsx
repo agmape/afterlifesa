@@ -78,13 +78,13 @@ const naoAlcoolicos: Item[] = [
   { name: "Monster", detail: "lata", price: "R$ 15,00" },
   { name: "Guaraviton", price: "R$ 6,00" },
   { name: "Água sem gás Nestlé", price: "R$ 3,00" },
-  { name: "Água com Gás Nestlé", price: "R$ 4,00" },
+  { name: "Água com gás Nestlé", price: "R$ 4,00" },
 ];
 
 const petiscos: Item[] = [
   { name: "Salgadinho Fofura", price: "R$ 4,00" },
   { name: "Amendoim Dori Pettiz", detail: "50g", price: "R$ 5,00" },
-  { name: "Porção de Salgados", detail: "5 unidades", price: "R$ 10,00" },
+  { name: "Porção de Mini Salgados", detail: "5 unidades", price: "R$ 10,00" },
   { name: "Porção de Batata Frita", price: "R$ 20,00", note: "Com Catupiry original, Cheddar Polenghi e bacon" },
 ];
 
