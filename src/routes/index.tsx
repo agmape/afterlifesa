@@ -149,7 +149,7 @@ function HomePage() {
 
       <footer className="border-t border-border/60 bg-background/60 px-5 py-10 text-center backdrop-blur-sm">
         <p className="flex items-center justify-center gap-2 font-body text-sm font-semibold tracking-[0.14em] text-muted-foreground">
-          <Calendar className="h-4 w-4" /> SÁBADO A PARTIR DAS 20H
+          <Calendar className="h-4 w-4" /> SEXTA E SÁBADO A PARTIR DAS 20H
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
           Rua Onze de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)
