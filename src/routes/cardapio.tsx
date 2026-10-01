@@ -172,7 +172,7 @@ function CardapioPage() {
         </div>
 
         <p className="mt-14 border-t border-border/60 pt-8 text-center text-sm text-muted-foreground">
-          Rua Onze de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)
+          Rua Onze de Junho, 17 — Casa Branca, Santo André/SP
         </p>
       </main>
     </AmbientInterface>
