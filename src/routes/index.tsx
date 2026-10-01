@@ -57,7 +57,7 @@ const directions = [
   {
     icon: Star,
     step: "5. CHEGOU!",
-    text: "O rolê é na Rua 11 de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)",
+    text: "O rolê é na Rua 11 de Junho, 17 — Casa Branca, Santo André/SP",
     color: "neon-pink",
     frame: "neon-frame-pink",
   },
@@ -152,7 +152,7 @@ function HomePage() {
           <Calendar className="h-4 w-4" /> SEXTA E SÁBADO A PARTIR DAS 20H
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Rua Onze de Junho, 17 — Casa Branca, Santo André/SP (antigo Cyber)
+          Rua Onze de Junho, 17 — Casa Branca, Santo André/SP
         </p>
       </footer>
     </AmbientInterface>
