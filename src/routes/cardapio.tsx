@@ -52,9 +52,11 @@ const alcoolicos: Item[] = [
     note: "Com Gelo de Coco + R$ 5,00",
   },
   { name: "Copão Espanhola", detail: "500ml", price: "R$ 18,00" },
+  { name: "Copão Busca Brisa", detail: "750ml", price: "R$ 20,00" },
   { name: "Cuba Libre", detail: "500ml", price: "R$ 25,00" },
   { name: "Xeque-Mate", detail: "Lata", price: "R$ 14,00" },
   { name: "Balena", detail: "shot 75ml", price: "R$ 30,00" },
+  { name: "Fireball", detail: "shot 50ml", price: "R$ 20,00" },
   { name: "José Cuervo Gold", detail: "shot 50ml", price: "R$ 20,00" },
 ];
 
@@ -75,13 +77,15 @@ const naoAlcoolicos: Item[] = [
   { name: "Fanta Uva Mini", price: "R$ 5,00" },
   { name: "Monster", detail: "lata", price: "R$ 15,00" },
   { name: "Guaraviton", price: "R$ 6,00" },
-  { name: "Água Bio", price: "R$ 3,00" },
+  { name: "Água sem gás Nestlé", price: "R$ 3,00" },
   { name: "Água com Gás Nestlé", price: "R$ 4,00" },
 ];
 
 const petiscos: Item[] = [
   { name: "Salgadinho Fofura", price: "R$ 4,00" },
-  { name: "Amendoim Jazam", detail: "50g", price: "R$ 5,00" },
+  { name: "Amendoim Dori Pettiz", detail: "50g", price: "R$ 5,00" },
+  { name: "Porção de Salgados", detail: "5 unidades", price: "R$ 10,00" },
+  { name: "Porção de Batata Frita", price: "R$ 20,00", note: "Com Catupiry original, Cheddar Polenghi e bacon" },
 ];
 
 function MenuSection({

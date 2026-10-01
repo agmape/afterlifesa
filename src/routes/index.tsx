@@ -10,14 +10,16 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sábado no Afterlife: sinuca, karaokê e sala de jogos liberada a noite toda, DJ Ninja das 20h às 04h. Rua Onze de Junho, 17 — Casa Branca, Santo André/SP.",
+          "Sábado no Afterlife: sinuca, karaokê e torneio de jogos das 20h às 04h. Rua Onze de Junho, 17 — Casa Branca, Santo André/SP.",
       },
       { property: "og:title", content: "Afterlife Pub — Sábado: Back to the Future" },
       {
         property: "og:description",
         content:
-          "Sinuca, karaokê e sala de jogos liberada a noite toda. DJ Ninja das 20h às 04h. Santo André/SP.",
+          "Sinuca, karaokê e torneio de jogos das 20h às 04h. Santo André/SP.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: HomePage,
