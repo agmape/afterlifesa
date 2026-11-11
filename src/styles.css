@@ -34,6 +34,7 @@
   --color-neon-cyan: var(--neon-cyan);
   --color-neon-green: var(--neon-green);
   --color-neon-purple: var(--neon-purple);
+  --color-whatsapp: var(--whatsapp);
 }
 
 @theme {
@@ -67,6 +68,8 @@
   --neon-cyan: oklch(0.88 0.16 195);
   --neon-green: oklch(0.9 0.28 140);
   --neon-purple: oklch(0.6 0.28 300);
+  --whatsapp: oklch(0.78 0.19 152);
+  --whatsapp-on: oklch(0.985 0.015 155);
 }
 
 html { scroll-behavior: smooth; }
@@ -191,6 +194,12 @@ body { overflow-x: hidden; }
 @utility route-icon { position: relative; z-index: 1; display: grid; width: 2.5rem; height: 2.5rem; flex: none; place-items: center; border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent); color: var(--accent); background: color-mix(in oklab, var(--accent) 6%, transparent); }
 @utility notice-bar { display: flex; align-items: center; justify-content: center; gap: 0.75rem; border: 1px solid color-mix(in oklab, var(--primary) 30%, transparent); padding: 1rem; background: color-mix(in oklab, var(--primary) 5%, transparent); }
 
+@utility whatsapp-nav { display: inline-flex; align-items: center; gap: 0.45rem; border: 1px solid color-mix(in oklab, var(--whatsapp) 52%, transparent); border-radius: 3px; padding: 0.55rem 0.8rem; font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; color: var(--whatsapp-on); background: linear-gradient(110deg, color-mix(in oklab, var(--whatsapp) 86%, var(--background)), color-mix(in oklab, var(--whatsapp) 66%, var(--neon-green))); box-shadow: 0 0 20px color-mix(in oklab, var(--whatsapp) 20%, transparent); transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; &:hover { transform: translateY(-2px); border-color: color-mix(in oklab, var(--whatsapp) 82%, transparent); box-shadow: 0 0 30px color-mix(in oklab, var(--whatsapp) 34%, transparent); } &:active { transform: scale(0.97); } }
+
+@utility whatsapp-float { position: fixed; z-index: 60; right: clamp(1rem, 4vw, 2.25rem); bottom: clamp(1rem, 4vw, 2.25rem); display: grid; width: 3.5rem; height: 3.5rem; place-items: center; border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--whatsapp) 62%, transparent); color: var(--whatsapp-on); background: radial-gradient(circle at 32% 28%, color-mix(in oklab, var(--whatsapp) 92%, var(--foreground)), color-mix(in oklab, var(--whatsapp) 74%, var(--background))); box-shadow: 0 14px 40px color-mix(in oklab, var(--background) 70%, transparent), 0 0 26px color-mix(in oklab, var(--whatsapp) 30%, transparent); transition: transform 220ms ease, box-shadow 220ms ease; &::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; border: 1px solid color-mix(in oklab, var(--whatsapp) 45%, transparent); animation: whatsapp-pulse 2.8s ease-out infinite; } &:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 18px 46px color-mix(in oklab, var(--background) 72%, transparent), 0 0 38px color-mix(in oklab, var(--whatsapp) 46%, transparent); } &:hover .whatsapp-float-label, &:focus-visible .whatsapp-float-label { opacity: 1; transform: none; } &:active { transform: scale(0.96); } }
+
+@utility whatsapp-float-label { position: absolute; right: calc(100% + 0.65rem); padding: 0.4rem 0.7rem; border: 1px solid color-mix(in oklab, var(--whatsapp) 40%, transparent); border-radius: 3px; background: color-mix(in oklab, var(--card) 92%, transparent); color: var(--whatsapp-on); font-family: var(--font-body); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em; white-space: nowrap; opacity: 0; transform: translateX(8px); transition: opacity 220ms ease, transform 220ms ease; backdrop-filter: blur(10px); }
+
 @utility menu-heading { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem; }
 @utility menu-panel { position: relative; border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); background: color-mix(in oklab, var(--card) 74%, transparent); backdrop-filter: blur(14px); transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease; &:first-child { grid-row: span 2; } &:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--accent) 30%, transparent); box-shadow: 0 24px 70px color-mix(in oklab, var(--background) 65%, transparent); } }
 @utility menu-icon { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border: 1px solid currentColor; background: color-mix(in oklab, currentColor 7%, transparent); }
@@ -204,6 +213,7 @@ body { overflow-x: hidden; }
 @keyframes orbit-drift { to { transform: translate3d(2rem, -1rem, 0) rotate(8deg); } }
 @keyframes pulse-soft { 50% { opacity: 0.45; transform: scale(0.75); } }
 @keyframes signal { to { height: 25%; opacity: 0.45; } }
+@keyframes whatsapp-pulse { 0% { transform: scale(1); opacity: 0.65; } 70%, 100% { transform: scale(1.5); opacity: 0; } }
 
 @media (max-width: 767px) {
   .cursor-light, .ambient-orbit { display: none; }

@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import { WhatsAppNavButton } from "@/components/WhatsApp";
+
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
@@ -26,6 +28,7 @@ export function Header() {
           >
             CARDÁPIO
           </Link>
+          <WhatsAppNavButton />
         </nav>
       </div>
     </header>
