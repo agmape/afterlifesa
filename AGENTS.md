@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Public contact submissions use a validated write-only server function and a service-role insert; no visitor can read submissions, to protect personal contact data.
+- Contact schemas live in a browser-safe shared module so client and server enforce the same input requirements.

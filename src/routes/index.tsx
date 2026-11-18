@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { ContactForm } from "@/components/ContactForm";
 import { AmbientInterface, StatusLine } from "@/components/AmbientInterface";
 import { TrainFront, PersonStanding, Bus, MapPin, Star, Calendar, TriangleAlert, ArrowUpRight, Radio, Ticket } from "lucide-react";
 
@@ -145,6 +146,7 @@ function HomePage() {
         </div>
         </div>
       </section>
+      <ContactForm />
       </main>
 
       <footer className="border-t border-border/60 bg-background/60 px-5 py-10 text-center backdrop-blur-sm">
