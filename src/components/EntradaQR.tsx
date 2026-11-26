@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { QrCode } from "lucide-react";
+import qrAsset from "@/assets/qr-entrada.png.asset.json";
 
-const QR_IMAGE = "/qr-entrada.png";
+const QR_IMAGE = qrAsset.url;
 
 export function EntradaQR({ className = "" }: { className?: string }) {
   const imageRef = useRef<HTMLImageElement>(null);
