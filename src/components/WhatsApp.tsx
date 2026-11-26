@@ -1,4 +1,4 @@
-const WHATSAPP_PHONE = "5511989977920";
+const WHATSAPP_PHONE = "5511948132388";
 const WHATSAPP_MESSAGE = "Olá! Vim pelo site do Afterlife Pub e quero garantir minha entrada.";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
@@ -18,8 +18,8 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float"
-      aria-label="Falar no WhatsApp do Afterlife: +55 11 98997-7920"
-      title="+55 11 98997-7920"
+      aria-label="Falar no WhatsApp do Afterlife: +55 11 94813-2388"
+      title="+55 11 94813-2388"
     >
       <span className="whatsapp-float-label" aria-hidden="true">
         FALAR NO WHATSAPP
@@ -36,7 +36,7 @@ export function WhatsAppNavButton() {
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-nav"
-      aria-label="Enviar mensagem no WhatsApp: +55 11 98997-7920"
+      aria-label="Enviar mensagem no WhatsApp: +55 11 94813-2388"
     >
       <WhatsAppIcon className="h-4 w-4" />
       <span className="hidden sm:inline">WHATSAPP</span>
