@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
 import { AmbientInterface, StatusLine } from "@/components/AmbientInterface";
+import { EntradaQR } from "@/components/EntradaQR";
 import { TrainFront, PersonStanding, Bus, MapPin, Star, Calendar, TriangleAlert, ArrowUpRight, Radio, Ticket } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -115,6 +116,10 @@ function HomePage() {
             VER CARDÁPIO <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-14 sm:px-8">
+        <EntradaQR className="reveal-up delay-two mx-auto w-full max-w-xl" />
       </section>
 
       <section className="section-band">

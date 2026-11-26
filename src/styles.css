@@ -200,6 +200,37 @@ body { overflow-x: hidden; }
 
 @utility whatsapp-float-label { position: absolute; right: calc(100% + 0.65rem); padding: 0.4rem 0.7rem; border: 1px solid color-mix(in oklab, var(--whatsapp) 40%, transparent); border-radius: 3px; background: color-mix(in oklab, var(--card) 92%, transparent); color: var(--whatsapp-on); font-family: var(--font-body); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em; white-space: nowrap; opacity: 0; transform: translateX(8px); transition: opacity 220ms ease, transform 220ms ease; backdrop-filter: blur(10px); }
 
+@utility qr-panel { display: flex; flex-direction: column; gap: 1.1rem; }
+
+@utility qr-frame {
+  display: grid;
+  place-items: center;
+  padding: clamp(0.85rem, 2.5vw, 1.25rem);
+  border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
+  border-radius: var(--radius-md);
+  background: oklch(0.985 0.006 295);
+  box-shadow: 0 0 34px color-mix(in oklab, var(--accent) 16%, transparent), inset 0 0 0 1px color-mix(in oklab, var(--foreground) 8%, transparent);
+  & img { display: block; width: 100%; max-width: 15.5rem; height: auto; image-rendering: pixelated; }
+}
+
+@utility qr-hint { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--muted-foreground); }
+
+@utility qr-placeholder {
+  display: grid;
+  width: 100%;
+  max-width: 15.5rem;
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  padding: 1.25rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: oklch(0.42 0.02 292);
+  background: repeating-linear-gradient(45deg, oklch(0.93 0.01 295) 0 10px, oklch(0.96 0.008 295) 10px 20px);
+}
+
 @utility menu-heading { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem; }
 @utility menu-panel { position: relative; border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); background: color-mix(in oklab, var(--card) 74%, transparent); backdrop-filter: blur(14px); transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease; &:first-child { grid-row: span 2; } &:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--accent) 30%, transparent); box-shadow: 0 24px 70px color-mix(in oklab, var(--background) 65%, transparent); } }
 @utility menu-icon { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border: 1px solid currentColor; background: color-mix(in oklab, currentColor 7%, transparent); }
